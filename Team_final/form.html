@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8" />
+  <title>form</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+ 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="dobPicker.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <!-- Bootstrap -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+   <link rel="stylesheet" href="style.css">  
+</head>
+
+<body class="content">
+
+  <style type="text/css">
+   #span, #span2 {
+    text-align: center;
+    color: red;
+  }
+
+  input {
+    max-width: 90%;
+  }
+
+  select {
+    margin-top: 3px;
+  }
+  </style>
+
+ <div id="my_navbar">
+
+<nav class=" navbar  navbar-inverse my_navbar" >
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <!-- <span class="sr-only">Toggle navigation</span> -->
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><img src="1.png" alt="dcfghjk" style="max-height: 180%; margin-top: -8px;" ></a>
+
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+             <ul class="nav navbar-nav">
+          <li><a href="main.html">ГОЛОВНА</a></li>  
+          <li><a href="mount.html" >ГОРИ</a></li> 
+          <li><a href="fly.html" class="active_menu" >В ПОВІТРІ</a></li>
+          <li><a href="jamp.html">ДЖАМПІНГ</a></li>
+          <li><a href="raft.html">РАФТИНГ</a></li>
+          <li><a href="bike.html" class="last">ВЕЛОСПОРТ</a></li>
+          <li><a href="contacts.html" class="last">КОНТАКТИ</a></li> 
+              </ul>
+           
+              <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <form>
+               <input type="text" name="search" placeholder="Search.." class="search">
+            </form>
+            </div>
+            
+            <!-- <button type="submit" class="btn btn-success">Sign in</button> -->
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+</div>
+
+  <script type="text/javascript">
+    function ValidMail() {
+      var output;
+      var re = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
+      var myMail = document.getElementById('mail').value;
+      var valid = re.test(myMail);
+      if (!valid) {
+        output = 'Адрес eл. пошти введено неправильно!';
+        document.getElementById('span').innerHTML = output + "<br>";
+        return false;
+      } else {
+        return true;
+      }
+    }
+
+    function ValidPhone() {
+      var output2;
+      var re = /^\d[\d\(\)\ -]{4,14}\d$/;
+      var myPhone = document.getElementById('phon_number').value;
+      var valid = re.test(myPhone);
+      if (!valid) {
+        output2 = 'Номер телефона введено неправильно!';
+        document.getElementById('span2').innerHTML = output2 + "<br>";
+        return false;
+      } else {
+        return true;
+      }
+    }  
+  </script>
+
+  <form name="forma12" class="login" action="main.html" onsubmit="return ValidMail()&&ValidPhone()">
+
+    <h2 style="text-align: center; padding: 2%;">Оформлення заявки на подорож</h2>
+    <h4 class="btn-success padding">Особисті і контактні дані</h4>
+    <p id="span"></p><p id="span2"></p>
+
+    <p class="text_name">
+      <label for="surname">Прізвище*:</label><br>
+      <input type="text" name="surname" id="surname" class="border" required="required" oninvalid="this.setCustomValidity('Заповніть це поле')" oninput="setCustomValidity('')"><br>
+    </p>
+    
+    <p class="text_name ">
+      <label for="name">І'мя*:</label><br>
+      <span id="span"></span><input type="text" name="name" id="name" class="border" required="required" oninvalid="this.setCustomValidity('Заповніть це поле')" oninput="setCustomValidity('')"><br>
+    </p>
+    
+    <p class="text_name">
+      <label for="fathers_name">По батькові*:</label><br>
+      <input type="text" name="fathers_name" id="fathers_name" class="border" required="required" oninvalid="this.setCustomValidity('Заповніть це поле')" oninput="setCustomValidity('')"><br>
+    </p>
+    
+    <p class="text_name">
+      <label for="mail">Е-мейл*:</label><br>
+      <input type="text" name="mail" id="mail" class="border"><br>
+    </p>
+    
+    <p class="text_name">
+      <label for="phon_number">Номер телефону*:</label><br>
+      <input type="text" name="phon_number" id="phon_number" class="border" placeholder="063-889-0551"><br>
+    </p>
+
+    <h4 class="btn-success padding">Про відпочинок</h4>
+
+    <p class="text_name">
+      <label >Дата початку:</label><br>
+      <select id="dobday" required="required" oninvalid="this.setCustomValidity('Виберіть день')" oninput="setCustomValidity('')"></select>
+      <select id="dobmonth" required="required" style="max-width: 80px" oninvalid="this.setCustomValidity('Виберіть місяць')" oninput="setCustomValidity('')"></select>
+      <select id="dobyear" required="required" oninvalid="this.setCustomValidity('Виберіть рік')" oninput="setCustomValidity('')"></select>
+
+      <script>
+        $(document).ready(function() {
+          $.dobPicker({
+            daySelector: '#dobday', 
+            monthSelector: '#dobmonth', 
+            yearSelector: '#dobyear', 
+            dayDefault: 'День', 
+            monthDefault: 'Місяць', 
+            yearDefault: 'Рік', 
+            minimumAge: -1, 
+            maximumAge: 1 
+          });
+        });
+      </script>
+
+    </p>
+
+    
+    <p class="text_name ">
+      <label>Кількість днів відпочинку:</label><br>
+      <select id= "day" name="day"  class="border">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5-10</option>
+        <option>10-15</option>
+      </select>
+    </p>
+  
+    <p class="text_name">
+      <label>Вид відпочинку*:</label><br>
+      <select id= "type" name="type"  class="border" style="max-width: 110px">
+        <option>Похід в гори</option>
+        <option>В повітрі</option>
+        <option>Рафтинг</option>
+        <option>Джампінг</option>
+        <option>Велоподорожі</option>
+        <option>Суміш</option>
+      </select>
+    </p>
+
+    <h4 class="btn-success padding">Загальна інформація</h4>
+
+    
+    <p  style="width: 95%; margin-right: 19%;"> Звідки дізнались про нас:
+      <input type="radio" name="information" value=""> від друзів  
+      <input type="radio" name="information" value=""> з інтернету
+      <input type="radio" name="information" value=""> з реклами
+    </p>
+
+    <p>
+      <label for="thinks">Ваші очікування від відпочинку</label>
+      <br>
+      <textarea style="max-width: 70%" name="thinks" id="textarea" rows="3" cols="135" class="border"></textarea>
+    </p>
+
+    <p class="btn-success padding">
+      <input type="checkbox" name="information" id="checkbox" required="required"> З правилами відпочинку в компанії ознайомлені 
+    </p>
+
+    <p>
+      * - поля обов'язкові до заповнення
+    </p>
+   
+    <p> 
+      <input type="submit"  id = "button" value= "Відправити" class="btn-success button"/>
+    </p>
+
+  </form>
+
+<footer>
+  <a href="http://twitter.com/minimalmonkey" class="icon-button twitter"><i class="icon-twitter"></i><span></span></a>
+  <a href="http://facebook.com" class="icon-button facebook"><i class="icon-facebook"></i><span></span></a>
+  <a href="http://plus.google.com" class="icon-button google-plus"><i class="icon-google-plus"></i><span></span></a>
+  <p class="pull-right"><a href="#">Back to top</a></p>
+  <p>Created by Web UI Team А · <a href="http://iit.nung.edu.ua/moodle/">WebUI · </a></p>
+</footer>
+
+</body>
+</html>
+
+
+
+
